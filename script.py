@@ -19,9 +19,12 @@ def main():
         try:
             response = requests.get(url)
             if response.status_code == 200:
-                email = input('\033[1;32mР’Р°С€ Email:\033[0m ')
+                email = input('\033[1;32mEnter your Email:\033[0m ')
                 response = requests.post('https://hdmn.cloud/ru/demo/success/', data={"demo_mail": email})
 
+                print("Check your mail for a code / link to verify mail and then get code")
+                print("If you didn't get a mail that means you enter invalid mail")
+                print('')
                 print('response: '+response.text)
             else:
                 print('error! '+response.status_code+" response: "+response.text)
